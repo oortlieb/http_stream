@@ -25,7 +25,9 @@ if Code.ensure_loaded?(HTTPoison) do
         request.body,
         request.headers,
         async: :once,
-        stream_to: self()
+        stream_to: self(),
+        recv_timeout: timeout(),
+        timeout: timeout()
       )
     end
 
